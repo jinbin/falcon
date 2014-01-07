@@ -1,5 +1,5 @@
 li.info id=info.id
   = "类型: #{info.type}\n详细信息: #{info.detail || 'n/a'}\n发生时间: #{info.createtime && info.createtime.strftime("%Y/%m/%d %H:%M%P") || 'n/a'}" 
-  form.delete action="/info/#{info.id}" method="POST"
-    input type="hidden" name="_method" value="DELETE"
-    input type="submit" name="&times;" value="忽略此条信息"
+  /! form.delete action="/info/#{info.id}" method="POST"
+  /!  input type="hidden" name="_method" value="DELETE"
+  /!  input type="submit" name="&times;" value="忽略此条信息"
