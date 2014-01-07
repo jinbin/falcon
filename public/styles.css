@@ -1,0 +1,17 @@
+body {background-color:#dddddd;}
+.info{
+  position:relative;
+  padding:14px 0 2px 28px;
+  border-bottom: dotted 1px #ccc;
+}
+.infos li.completed form.update input{
+  color:#47FD6B;
+  }
+form.delete{
+  display:inline;
+  }
+form.delete input{
+  background:none;
+  cursor:pointer;
+  border:none;
+  }

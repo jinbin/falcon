@@ -15,6 +15,7 @@ DataMapper.finalize
 
 get '/' do 
   @infos = Info.all.sort_by {|i| -i.id}
+  @time = Time.new
   slim :index
 end
 
@@ -25,4 +26,8 @@ end
 
 post '/info/new' do 
   Info.create type: params[:type], detail: params[:detail], createtime: Time.new if params[:type]
+end
+
+get '/styles.css' do 
+  scss :styles
 end
