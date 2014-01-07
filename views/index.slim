@@ -1,0 +1,4 @@
+h1 CISE报警汇总
+ul.infos
+  - @infos.each do |info|
+    == slim :info, locals:{ info: info }
