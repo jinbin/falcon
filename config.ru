@@ -1,6 +1,2 @@
-require 'bundler'
-Bundler.require
-
-require './main'
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
+require './config/boot.rb'
 run Sinatra::Application
