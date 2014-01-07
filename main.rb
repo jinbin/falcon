@@ -1,3 +1,7 @@
+require 'data_mapper'
+require 'sinatra'
+
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite3://#{Dir.pwd}/development.db")
 
 class Info
   include DataMapper::Resource
@@ -17,4 +21,8 @@ end
 delete '/info/:id' do
   Info.get(params[:id]).destroy
   redirect '/'
+end
+
+post '/info/new' do 
+  Info.create type: params[:type], detail: params[:detail], createtime: Time.new if params[:type]
 end
