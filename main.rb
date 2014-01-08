@@ -14,7 +14,7 @@ end
 DataMapper.finalize
 
 get '/' do 
-  @infos = Info.all.sort_by {|i| -i.id}
+  @infos = Info.all.sort_by {|i| -i.id}[0..100]
   @time = Time.new
   slim :index
 end
