@@ -1,5 +1,5 @@
 h1 CISE报警汇总
-="更新于#{@time.strftime('%Y/%m/%d %H:%M%P')} , 只显示最近的100条信息"
+="更新于#{@time.strftime('%Y/%m/%d %H:%M %P')} , 只显示最近的100条信息"
 ul.infos
   - @infos.each do |info|
     == slim :info, locals:{ info: info }
