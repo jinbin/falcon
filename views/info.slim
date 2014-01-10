@@ -1,5 +1,5 @@
 li.info id=info.id
-  = "#{info.createtime && info.createtime.strftime("%Y/%m/%d %H:%M %P") || 'n/a'} 类型: [#{info.type.ljust 8, '.'}] 详细信息: #{info.detail || 'n/a'}" 
+  = "#{info.createtime && info.createtime.strftime("%Y/%m/%d %H:%M %P") || 'n/a'} 类型: [#{info.type.ljust 8, '.'}] 详情: #{info.detail || 'n/a'}" 
   /! form.delete action="/info/#{info.id}" method="POST"
   /!  input type="hidden" name="_method" value="DELETE"
   /!  input type="submit" name="&times;" value="忽略此条信息"
