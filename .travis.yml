@@ -2,6 +2,4 @@ language: ruby
 rvm:
   - 1.9.3
 
-script: ruby -v
-script: more /proc/cpuinfo | grep processor
-script: free -m
+script: ruby -v && more /proc/cpuinfo | grep processor && free -m
