@@ -3,10 +3,17 @@ rvm:
   - "1.8.7"
   - "1.9.2"
   - "1.9.3"
-  - rbx
-
-script: ruby -v && more /proc/cpuinfo | grep processor && free -m
-after_script: echo $TRAVIS_TEST_RESULT
+  - rbx-18mode
+services:
+  - mongodb
+before_script:
+  - mongo mydb_test --eval 'db.addUser("travis", "test");'
+script: 
+- ruby -v 
+- more /proc/cpuinfo 
+- grep processor && free -m
+after_script: 
+- echo $TRAVIS_TEST_RESULT
 
 branches:
   only:
