@@ -6,8 +6,6 @@ rvm:
   - rbx-18mode
 services:
   - mongodb
-before_script:
-  - mongo mydb_test --eval 'db.addUser("travis", "test");'
 script: 
 - ruby -v 
 - more /proc/cpuinfo 
