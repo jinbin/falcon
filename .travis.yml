@@ -4,8 +4,6 @@ rvm:
   - "1.9.2"
   - "1.9.3"
   - rbx-18mode
-services:
-  - mongodb
 script: 
 - ruby -v 
 - more /proc/cpuinfo 
