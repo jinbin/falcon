@@ -6,7 +6,7 @@ rvm:
   - rbx-18mode
 script: 
 - ruby -v 
-- more /proc/cpuinfo && grep processor 
+- more /proc/cpuinfo && grep processor && wc -l
 - free -m
 after_script: 
 - echo $TRAVIS_TEST_RESULT
