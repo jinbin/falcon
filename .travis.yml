@@ -8,6 +8,8 @@ script:
 - ruby -v 
 - more /proc/cpuinfo && grep processor && wc -l
 - free -m
+- cd /opt/; pwd
+- pwd
 after_script: 
 - echo $TRAVIS_TEST_RESULT
 
