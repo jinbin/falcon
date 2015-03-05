@@ -1,17 +1,15 @@
-language: ruby
-rvm:
-  - "1.8.7"
-  - "1.9.2"
-  - "1.9.3"
-  - rbx-18mode
-script: 
-- ruby -v 
-- more /proc/cpuinfo && grep processor && wc -l
-- free -m
-- cd /opt/; pwd
-- pwd
-after_script: 
-- echo $TRAVIS_TEST_RESULT
+language: android
+android:
+  components:
+  - platform-tools
+  - android-19
+  - sys-img-armeabi-v7a-android-19
+before_script:
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
+script:
+  - ls
 
 branches:
   only:
