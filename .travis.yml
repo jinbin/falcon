@@ -6,6 +6,7 @@ android:
   - sys-img-armeabi-v7a-android-19   # System image
 script:
   - android list targets
+  - adb devices
   - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
   - android list targets
   - emulator -avd test -no-skin -no-audio -no-window &
