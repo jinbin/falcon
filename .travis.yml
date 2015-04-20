@@ -1,15 +1,4 @@
-language: android
-android:
-  components:
-  - build-tools-19.1.0               # BuildTools version
-  - android-19                       # SDK version
-  - sys-img-armeabi-v7a-android-19   # System image
-script:
-  - android list targets
-  - echo no | android create avd --force -n test -t android-19 --abi armeabi-v7a
-  - android list targets
-  - emulator -avd test -no-skin -no-audio -no-window &
-
-notifications:
-  email:
-  - bin.jinb@alibaba-inc.com
+env:
+  - TEST_SUITE=units
+  - TEST_SUITE=integration
+script: "bundle exec rake test:$TEST_SUITE"
