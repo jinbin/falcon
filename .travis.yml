@@ -3,4 +3,5 @@ env:
   - TEST_SUITE=units
   - TEST_SUITE=integration
   - HELLO=world
+  - TEST_SUITE=test
 script: echo "bundle exec rake test:$TEST_SUITE"
