@@ -1,4 +1,8 @@
 language: java
+services:
+  - riak     # will start riak
+  - rabbitmq # will start rabbitmq-server
+  - memcached 
 env:
   - TEST_SUITE=units
   - TEST_SUITE=integration
